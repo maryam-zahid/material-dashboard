@@ -100,6 +100,6 @@ export const authNavigation: NavigationItem[] = [
 
 export const documentationNavigation: NavigationItem = {
   label: "Documentation",
-  href: "/documentation",
+  href: "/dashboard/documentation",
   iconPath: "/icons/sidebar/documentation-icon.svg",
 };
