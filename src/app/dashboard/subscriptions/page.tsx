@@ -1,9 +1,18 @@
+import { BillingHistory } from "@/components/subscriptions/BillingHistory";
+import { CurrentSubscription } from "@/components/subscriptions/CurrentSubscription";
+import { PricingPlans } from "@/components/subscriptions/PricingPlans";
+import { SubscriptionsHeader } from "@/components/subscriptions/SubscriptionsHeader";
+
 export default function SubscriptionsPage() {
   return (
-    <div>
-      <h1 className="text-2xl font-semibold text-[#1C1917]">
-        Subscriptions
-      </h1>
+    <div className="flex w-full flex-col gap-6">
+      <SubscriptionsHeader />
+
+      <CurrentSubscription />
+
+      <PricingPlans />
+
+      <BillingHistory />
     </div>
   );
 }
