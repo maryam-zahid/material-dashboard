@@ -1,6 +1,37 @@
+
+// // import type { ReactNode } from "react";
+
+// // import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
+// // import { MobileSidebar } from "@/components/dashboard/MobileSidebar";
+
+// // type DashboardShellProps = {
+// //   children: ReactNode;
+// // };
+
+// // export function DashboardShell({
+// //   children,
+// // }: DashboardShellProps) {
+// //   return (
+// //     <div className="min-h-screen bg-[#FAFAF9]">
+// //       <MobileSidebar />
+
+// //       <div className="mx-auto flex w-full max-w-[1440px]">
+// //         <aside className="hidden w-[268px] shrink-0 px-[30px] pt-[43px] lg:block">
+// //           <DashboardSidebar />
+// //         </aside>
+
+// //         <div className="min-w-0 flex-1">
+// //           {children}
+// //         </div>
+// //       </div>
+// //     </div>
+// //   );
+// // }
+
 // import type { ReactNode } from "react";
 
 // import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
+// import { MobileSidebar } from "@/components/dashboard/MobileSidebar";
 
 // type DashboardShellProps = {
 //   children: ReactNode;
@@ -10,19 +41,66 @@
 //   children,
 // }: DashboardShellProps) {
 //   return (
-//     <div className="min-h-screen bg-[#FAFAF9]">
-//       <div className="mx-auto flex w-full max-w-[1440px]">
-//         <DashboardSidebar />
+//     <div
+//       className="min-h-screen bg-[#FAFAF9] bg-cover bg-center bg-no-repeat"
+//       style={{
+//         backgroundImage:
+//           "url('/images/backgrounds/texture-background-grainy.png')",
+//       }}
+//     >
+//       <MobileSidebar />
 
-//         <main className="min-w-0 flex-1 px-4 py-4 sm:px-6 lg:px-[30px] lg:py-6 lg:pl-0">
-//           <div className="min-h-[calc(100vh-48px)] overflow-hidden rounded-2xl border border-[#E7E5E4] bg-white">
-//             {children}
-//           </div>
-//         </main>
+//       <div className="mx-auto flex w-full max-w-[1440px] items-start gap-[30px] px-4 py-6 lg:px-6 xl:px-0">
+//         <aside className="hidden w-[238px] shrink-0 pl-[30px] pt-[19px] lg:block">
+//           <DashboardSidebar />
+//         </aside>
+
+//         <div className="min-w-0 flex-1">
+//           {children}
+//         </div>
 //       </div>
 //     </div>
 //   );
 // }
+// import type { ReactNode } from "react";
+
+// import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
+// import { MobileSidebar } from "@/components/dashboard/MobileSidebar";
+
+// type DashboardShellProps = {
+//   children: ReactNode;
+// };
+
+// export function DashboardShell({
+//   children,
+// }: DashboardShellProps) {
+//   return (
+//     <div
+//       className="min-h-screen bg-[#FAFAF9] bg-cover bg-center"
+//       style={{
+//         backgroundImage:
+//           "url('/images/backgrounds/texture-background-grainy.png')",
+//       }}
+//     >
+//       {/* Mobile only */}
+//       <div className="lg:hidden">
+//         <MobileSidebar />
+//       </div>
+
+//       <div className="mx-auto flex w-full max-w-[1440px] items-start">
+//         {/* Desktop only */}
+//         <aside className="hidden w-[268px] shrink-0 pl-[30px] pt-[43px] lg:block">
+//           <DashboardSidebar />
+//         </aside>
+
+//         <div className="min-w-0 flex-1 px-3 py-6 lg:pr-6 lg:pl-0">
+//           {children}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }
+
 import type { ReactNode } from "react";
 
 import { DashboardSidebar } from "@/components/dashboard/DashboardSidebar";
@@ -36,24 +114,24 @@ export function DashboardShell({
   children,
 }: DashboardShellProps) {
   return (
-    <div className="min-h-screen bg-[#FAFAF9]">
-      <div className="mx-auto flex w-full max-w-[1440px]">
-        <DashboardSidebar />
+    <div
+      className="min-h-screen bg-[#FAFAF9] bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url('/images/backgrounds/texture-background-grainy.png')",
+      }}
+    >
+      <div className="min-[800px]:hidden">
+        <MobileSidebar />
+      </div>
 
-        <div className="min-w-0 flex-1">
-          <header className="flex h-16 items-center justify-between border-b border-[#E7E5E4] bg-[#FAFAF9] px-4 lg:hidden">
-            <span className="text-lg font-semibold text-[#1C1917]">
-              Material Shadcn
-            </span>
+      <div className="mx-auto flex w-full max-w-[1440px] items-start">
+        <aside className="hidden w-[268px] shrink-0 pl-[30px] pt-[43px] min-[800px]:block">
+          <DashboardSidebar />
+        </aside>
 
-            <MobileSidebar />
-          </header>
-
-          <main className="min-w-0 px-3 py-4 sm:px-5 lg:px-[24px] lg:py-6 lg:pl-0">
-            <div className="min-h-[calc(100vh-48px)] overflow-hidden rounded-2xl border border-[#E7E5E4] bg-white">
-              {children}
-            </div>
-          </main>
+        <div className="min-w-0 flex-1 px-3 py-6 min-[800px]:pr-6 min-[800px]:pl-0">
+          {children}
         </div>
       </div>
     </div>
